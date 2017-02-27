@@ -1,0 +1,19 @@
+doctype html
+html.no-js(lang='en')
+  block vars
+  head
+    include partials/document_head
+
+  body
+    include partials/header
+
+    main#content.content
+      block content
+
+    include partials/navigation
+    include partials/footer
+
+    link(rel='stylesheet' href='/stylesheets/main.css')
+    script(src='/javascript/all.js')
+
+    block script

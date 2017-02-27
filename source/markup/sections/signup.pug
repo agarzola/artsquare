@@ -1,0 +1,7 @@
+section#signup.signup
+  h2 Start selling your work today
+  p Sign up takes less than 2 minutes and we’re here to help, if you need it!
+  form(method='post' action='/signup')#signup_form.signup_form
+    label(for='signup_form--email_address') Your email address
+    input(type='email' name='email' id='signup_form--email_address' placeholder='Your email address')
+    button(type='submit').button Create Your Account
