@@ -16,12 +16,15 @@
     background-color $purple
     background-position 0 50%
   &.outline
-    background #fff
+    background-color transparent
+    background-image $purple_nothing_gradient
+    background-size 300% 100%
+    background-position 100% 50%
     border em(2) solid $purple
     color $purple
     &:hover, &:focus
-      background $purple
       color #fff
+      background-position 0 50%
   &.pill
     border-radius 10em
   &.shadow
