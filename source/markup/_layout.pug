@@ -13,6 +13,9 @@ html.supports-no-js(lang='en')
     include partials/footer
 
     link(href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet')
+    //- Quicksand is only used on pricing amounts and currency,
+    //- so we limit the request to numbers and dollar sign only:
+    link(href='https://fonts.googleapis.com/css?family=Quicksand&text=$0123456789' rel='stylesheet')
     link(rel='stylesheet' href='/stylesheets/main.css')
     script(src='/javascript/all.js')
 
