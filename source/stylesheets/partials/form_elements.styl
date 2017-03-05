@@ -1,0 +1,23 @@
+input
+  &[type=text], &[type=email],
+  &[type=tel], &[type=number]
+    appearance none
+    padding 0.6em 1.2em
+    border em(2) solid $blue
+    border-radius $radius
+    background-color #fff
+    box-sizing border-box
+    position relative
+    display inline-block
+    overflow visible
+    &::before
+      content ' '
+      display block
+      position absolute
+      top em(-2)
+      left em(-2)
+      right em(-2)
+      bottom em(-2)
+      background $basic_gradient
+    &:focus
+      outline none
