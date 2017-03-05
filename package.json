@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "modernizr": "./node_modules/modernizr/bin/modernizr -u -c modernizr.json -d source/javascript/vendor/",
+    "modernizr:prod": "./node_modules/modernizr/bin/modernizr -u -c modernizr_prod.json -d source/javascript/vendor/",
     "build": "./node_modules/gulp/bin/gulp.js build",
     "watch": "./node_modules/gulp/bin/gulp.js watch",
     "implode": "rm -rf ./build/*",
