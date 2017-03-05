@@ -1,0 +1,26 @@
+.button
+  position relative
+  -webkit-appearance none
+  border none
+  border-radius $radius
+  padding 0.6em 1.2em
+  background-color $blue
+  background linear-gradient(left, 25% $blue, 75% $purple)
+  background-size 200% 100%
+  background-position 50%
+  color #fff
+  box-sizing border-box
+  transition-property background, background-color, color
+  &:hover, &:focus
+    outline none
+    background-color $purple
+    background-position 0 50%
+  &.outline
+    background #fff
+    border em(2) solid $purple
+    color $purple
+    &:hover, &:focus
+      background $purple
+      color #fff
+  &.pill
+    border-radius 10em
