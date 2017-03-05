@@ -64,7 +64,8 @@ gulp.task('styles', function () {
   gulp.src(stylesSrc)
   .pipe(plumber())
   .pipe(stylus({
-    use: [nib()],
+    use: nib(),
+    import: [ 'nib' ],
     compress: (argv.production ? true : false)
   }))
   .pipe(prefix('last 2 versions', '> 1%'))
