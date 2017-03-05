@@ -10,7 +10,7 @@
   background-position 50%
   color #fff
   box-sizing border-box
-  transition-property background, background-color, color
+  transition-property background, background-color, color, box-shadow
   &:hover, &:focus
     outline none
     background-color $purple
@@ -24,3 +24,7 @@
       color #fff
   &.pill
     border-radius 10em
+  &.shadow
+    box-shadow 0 0.2em 2em #d2d2d2
+    &:hover
+      box-shadow 0 0.1em 0.2em #c2c2c2
