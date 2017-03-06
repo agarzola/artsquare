@@ -20,6 +20,7 @@
   "feature-detects": [
     "css/vhunit",
     "css/vwunit",
+    "svg",
     "forms/placeholder"
   ]
 }
