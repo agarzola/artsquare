@@ -1,14 +1,15 @@
 include ./partners_data
 
 section#partners.partners
-  h2 We’re adding new partner platforms every week
-  p Sign up to let us know which platforms you want us to add next.
-  .partners_stage
-    ul(style=('width:' + ((partners.length * 248 / 14) + 2) + 'em;'))
-      for partner in partners
-        li: a(href=partner.url target='_blank')
-          .partner_logo
-            img(src=partner.image alt=(partner.name + ' logo'))
-          .partner_info
-            h3= partner.name
-            p= partner.type
+  .container
+    h2 We’re adding new partner platforms every week
+    p Sign up to let us know which platforms you want us to add next.
+    .partners_stage
+      ul(style=('width:' + ((partners.length * 248 / 14) + 2) + 'em;'))
+        for partner in partners
+          li: a(href=partner.url target='_blank')
+            .partner_logo
+              img(src=`/images/partners/${partner.image}@1x.png` srcset=`/images/partners/${partner.image}@2x.png` alt=(partner.name + ' logo'))
+            .partner_info
+              h3= partner.name
+              p= partner.type
