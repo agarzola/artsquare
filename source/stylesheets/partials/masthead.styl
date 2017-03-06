@@ -7,19 +7,22 @@
   border-bottom em(1) solid transparent
   transition-property background-color, height, border-color
   transition-duration 0.1s
-  .supports-no-js &, &.white_bg
-    background-color #fff
-    border-bottom-color #eee
   h1
     font-size 1em
     width 2em
     height 2em
     margin-top 1.5em
     display block
-    background-image $blue_purple_gradient
+    background $purple
     color transparent
     text-indent -999em
     transition-property margin-top
+  .supports-no-js &, &.white_bg
+    height 3em
+    background-color #fff
+    border-bottom-color #eee
+    h1
+      margin-top 0.5em
   @media (min-width (600/16)em)
     height 7em
     h1
