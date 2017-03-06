@@ -6,6 +6,12 @@ h1, h2, h3, h4, h5
 h2
   font-size 2em
   margin 1em 0 0
+  transition-property font-size
+  @media (min-width (600/16)em)
+    // base font-size increases to 18px at 600px wide
+    font-size em(36)
+  @media (min-width (900/16)em)
+    font-size em(50)
 
 h3
   font-size 1em
