@@ -13,16 +13,18 @@ block content
 block script
   script.
     (function (window, document) {
-      var masthead = document.getElementById('masthead');
+      var body = document.body;
+      var className = 'reduced_header';
+      var regex = new RegExp(' ?' + className, 'g');
 
       window.addEventListener('scroll', toggle_masthead_bg);
       window.addEventListener('resize', toggle_masthead_bg);
 
       function toggle_masthead_bg (event) {
-        if (document.body.scrollTop > 36) {
-          masthead.className += masthead.className.match(/white_bg/) ? '' : ' white_bg';
+        if (body.scrollTop > 36) {
+          body.className += body.className.match(regex) ? '' : ' ' + className;
         } else {
-          masthead.className = masthead.className.replace(/ ?white_bg/, '');
+          body.className = body.className.replace(regex, '');
         }
       }
     })(window, document);

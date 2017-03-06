@@ -1,4 +1,7 @@
 .navigation
+  fixed top 5em left 0 right 0
+  transition-property top
+  z-index 110
   ol
     list-style none
     padding 0
@@ -10,18 +13,17 @@
     background-color #fff
     background-color rgba(#fff, 0.95)
     position absolute
-    top 5em
+    top 0
     left 0
     right 0
-    z-index -1
+    z-index 1
     box-sizing border-box
-  .navigation_toggle:checked ~ ol
+  &:target ol
     height em(300, 14) + 1.4em
-  .supports-no-js &, .white_bg &
-    ol
-      top 3em
-    .navigation_toggle:checked ~ ol
-      height em(300, 14) + 1.4em
+  .supports-no-js &, .reduced_header &
+    top 3em
+    &:target ol
+      height em(300, 14) + 1.4em // 50px * 6 menu items + bottom padding
   li
     display block
     height em(50, 14)
@@ -42,23 +44,46 @@
     &:hover, &:focus
       color #fff
 
-.navigation_toggle
-  display none
-
-.navigation_toggle_label
+.navigation_open
   color transparent
   text-indent -999em
   display block
   width em(28, 14)
   height em(28, 14)
   overflow hidden
-  background-color #000
+  border-radius 0
   float right
   cursor pointer
+  box-sizing border-box
   header_element_spacing()
+  background-image url('/images/hamburger_menu_icon@1x.png')
+  background-position center
+  background-size em(27, 14) em(22, 14)
+  background-repeat no-repeat
+  @media (min-resolution 1.4dppx)
+    background-image url('/images/hamburger_menu_icon@2x.png')
+  @media (min-resolution 2.4dppx)
+    background-image url('/images/hamburger_menu_icon@3x.png')
+  .supports-svg &
+    background-image url('/images/hamburger_menu_icon.svg')
+  &:hover, &:focus
+    background-color transparent
+
+#navigation_close
+  display none
+  fixed top 0 left 0 right 0 bottom 0
+  z-index 0
+  color transparent
+  background-color transparent
+  text-indent -999em
+  &:hover, &:focus
+    color transparent
+    background-color transparent
+  #navigation:target &
+    display block
 
 @media (min-width $lg_breakpoint)
-  .navigation_toggle_label
+  .navigation_open
     display none
   .navigation
     ol
@@ -70,7 +95,7 @@
       text-align right
       height auto
       z-index 1
-      .supports-no-js &, .white_bg &
+      .supports-no-js &, .reduced_header &
         padding-top 1em
         font-size 0.9em
         a

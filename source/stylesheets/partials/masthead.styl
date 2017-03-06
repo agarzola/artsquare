@@ -1,19 +1,19 @@
 .masthead
   fixed top 0 left 0 right 0
   height 5em
-  z-index 10
+  z-index 100
   background-color transparent
   border-bottom em(1) solid transparent
   transition-property background-color, height, border-color
   transition-duration 0.1s
-  .supports-no-js &, &.white_bg
+  .supports-no-js &, .reduced_header &
     height 3em
     background-color #fff
     background-color rgba(#fff, 0.95)
     border-bottom-color #eee
   @media (min-width $lg_breakpoint)
     height 7em
-    &.white_bg
+    .reduced_header &
       height 3em
 
 .logo
