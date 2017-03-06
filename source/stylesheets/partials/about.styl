@@ -1,0 +1,49 @@
+.about
+  min-height initial !important
+  position relative
+  background-image url('/images/tools_bg_small@1x.jpg')
+  background-position center top
+  background-size cover
+  background-repeat no-repeat
+  background-attachment fixed
+  @media (min-resolution 1.4dppx)
+    background-image url('/images/tools_bg_small@2x.jpg')
+  @media (min-width $md_breakpoint)
+    background-color transparent
+    background-image none
+    &:before, &:after
+      content ' '
+      display block
+      position absolute
+      bottom 7em
+      width 50%
+      background-image url('/images/tools_bg_large@1x.jpg')
+      background-position center top
+      background-size cover
+      background-repeat no-repeat
+      background-attachment fixed
+      z-index 0
+    &:before
+      top 35%
+      left 0
+    &:after
+      top 0
+      right 0
+  .white_container
+    position relative
+    background-color #fbfbfb
+    @media (min-width $md_breakpoint)
+      max-width 83%
+      margin-left auto
+      .tools_description
+        position absolute
+        top 1.6em
+        left -4em
+        width em(400)
+        text-align left
+    z-index 1
+  img
+    max-width 100%
+    display block
+    @media (min-width $md_breakpoint)
+      margin-top 10em
