@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="194px" height="44px" viewBox="0 0 194 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>artsquare_logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0AB0EE" offset="0%"></stop>
+            <stop stop-color="#834CF1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage_Desktop" transform="translate(-237.000000, -44.000000)">
+            <g id="HERO" transform="translate(-1.000000, 0.000000)">
+                <g id="artsquare_logo" transform="translate(238.000000, 44.000000)">
+                    <path d="M0.321120531,33.0670601 L0.102939603,33.0670601 L0.102939603,32.9410933 L0.0906899352,32.9340209 L0.102939603,32.9128039 L0.102939603,11.0947656 L0.0906899352,11.0735486 L0.102939603,11.0664762 L0.102939603,10.9196741 L0.357208427,10.9196741 L11.1846968,4.66842076 L17.1328694,8.1025998 L6.05106854,14.5006805 L6.05106854,29.5068891 L19.2610882,37.1336975 L32.4716213,29.5065927 L32.4716213,14.5009769 L21.2956237,8.04851167 L27.2437963,4.61433263 L38.1649681,10.9196741 L38.4197939,10.9196741 L38.4197939,11.0667978 L38.4314866,11.0735486 L38.4197939,11.0938009 L38.4197939,32.9137687 L38.4314866,32.9340209 L38.4197939,32.9407717 L38.4197939,33.0670601 L38.201056,33.0670601 L19.2806895,43.9907388 L19.2708889,44.007714 L19.2610882,44.0020556 L19.2512876,44.007714 L19.241487,43.9907388 L0.321120531,33.0670601 Z M19.1800915,6.92063553 L13.2319189,3.48645649 L19.241487,0.0168307644 L19.2512876,-0.000144430828 L19.2610882,0.00551396758 L19.2708889,-0.000144430828 L19.2806895,0.0168307644 L25.1965742,3.43236836 L22.2386318,5.14013716 L22.2449752,5.15112413 L19.1800915,6.92063553 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+                    <text id="artsquare" font-family="Raleway-Regular, Raleway" font-size="30.72" font-weight="normal" letter-spacing="0.153600001" fill="#000000">
+                        <tspan x="58.0075637" y="31.2222222">artsquar</tspan>
+                        <tspan x="176.740364" y="31.2222222">e</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -18,11 +18,23 @@
 
 .logo
   font-size 1em
-  width 2em
-  height 2em
+  width em(176)
+  height em(40)
   display block
-  background $purple
   color transparent
   text-indent -999em
   float left
   header_element_spacing()
+  background-image url('/images/artsquare_logo@1x.png')
+  background-position center
+  background-size auto em(40)
+  background-repeat no-repeat
+  @media (min-resolution 1.4dppx)
+    background-image url('/images/artsquare_logo@2x.png')
+  @media (min-resolution 2.4dppx)
+    background-image url('/images/artsquare_logo@3x.png')
+  .supports-svg &
+    background-image url('/images/artsquare_logo.svg')
+  @media (min-width $lg_breakpoint)
+    width em(194)
+    height em(44)
