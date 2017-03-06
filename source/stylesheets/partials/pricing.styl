@@ -1,4 +1,20 @@
 #pricing
+  background-image url('/images/pricing_bg_small@1x.jpg')
+  background-position center top
+  background-size cover
+  background-repeat no-repeat
+  background-attachment fixed
+  @media (min-resolution 1.4dppx)
+    background-image url('/images/pricing_bg_small@2x.jpg')
+  @media (min-width $lg_breakpoint)
+    background-image url('/images/pricing_bg_large@1x.jpg')
+    @media (min-resolution 1.4dppx)
+      background-image url('/images/pricing_bg_large@2x.jpg')
+  .pricing_information
+    margin-bottom 2em
+    max-width em(860, 20)
+    margin-left auto
+    margin-right auto
   .pricing_package
     padding-bottom 3.8em
     max-width em(300)
@@ -32,4 +48,16 @@
       position absolute
       top em(10)
       left 0
-
+  @media (min-width $lg_breakpoint)
+    display flex
+    justify-content center
+    .pricing_information
+      float left
+      max-width em(500)
+      text-align left
+    .pricing_package
+      float right
+      min-width em(300)
+  @media (min-width $lg_breakpoint + 4)
+    .pricing_information
+      margin-right 3em
