@@ -11,3 +11,18 @@ block content
   include sections/signup
 
 block script
+  script.
+    (function (window, document) {
+      var masthead = document.getElementById('masthead');
+
+      window.addEventListener('scroll', toggle_masthead_bg);
+      window.addEventListener('resize', toggle_masthead_bg);
+
+      function toggle_masthead_bg (event) {
+        if (document.body.scrollTop > 36) {
+          masthead.className += masthead.className.match(/white_bg/) ? '' : ' white_bg';
+        } else {
+          masthead.className = masthead.className.replace(/ ?white_bg/, '');
+        }
+      }
+    })(window, document);

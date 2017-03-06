@@ -1,0 +1,30 @@
+.masthead
+  fixed top 0 left 0 right 0
+  height 5em
+  overflow hidden
+  z-index 10
+  background-color transparent
+  border-bottom em(1) solid transparent
+  transition-property background-color, height, border-color
+  transition-duration 0.1s
+  .supports-no-js &, &.white_bg
+    background-color #fff
+    border-bottom-color #eee
+  h1
+    font-size 1em
+    width 2em
+    height 2em
+    margin-top 1.5em
+    display block
+    background-image $blue_purple_gradient
+    color transparent
+    text-indent -999em
+    transition-property margin-top
+  @media (min-width (600/16)em)
+    height 7em
+    h1
+      margin-top 2.5em
+    &.white_bg
+      height 3em
+      h1
+        margin-top 0.5em
