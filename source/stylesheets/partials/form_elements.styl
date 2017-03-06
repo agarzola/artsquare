@@ -1,6 +1,7 @@
 input
   &[type=text], &[type=email],
   &[type=tel], &[type=number]
+    font-size em(20, 14)
     appearance none
     padding 0.6em 1.2em
     border em(2) solid $blue
@@ -8,8 +9,9 @@ input
     background-color #fff
     box-sizing border-box
     position relative
-    display inline-block
+    display block
     overflow visible
+    width 100%
     &::before
       content ' '
       display block
@@ -21,3 +23,5 @@ input
       background $basic_gradient
     &:focus
       outline none
+    @media (min-width $md_breakpoint)
+      font-size em(20, 18)
