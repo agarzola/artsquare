@@ -1,0 +1,84 @@
+.navigation
+  ol
+    list-style none
+    padding 0
+    margin 0
+    width 100%
+    height 0
+    overflow hidden
+    transition-property height, font-size, top
+    background-color #fff
+    background-color rgba(#fff, 0.95)
+    position absolute
+    top 5em
+    left 0
+    right 0
+    z-index -1
+    box-sizing border-box
+  .navigation_toggle:checked ~ ol
+    height em(300, 14) + 1.4em
+  .supports-no-js &, .white_bg &
+    ol
+      top 3em
+    .navigation_toggle:checked ~ ol
+      height em(300, 14) + 1.4em
+  li
+    display block
+    height em(50, 14)
+    position relative
+    border-top em(1) solid #ddd
+    &.login
+      border-top none
+      a
+        left em(18, 14)
+        right em(18, 14)
+        padding-top 0.7em
+  a
+    color #000
+    font-size em(20, 14)
+    padding-top 0.8em
+    position absolute
+    hostile_takeover()
+    &:hover, &:focus
+      color #fff
+
+.navigation_toggle
+  display none
+
+.navigation_toggle_label
+  color transparent
+  text-indent -999em
+  display block
+  width em(28, 14)
+  height em(28, 14)
+  overflow hidden
+  background-color #000
+  float right
+  cursor pointer
+  header_element_spacing()
+
+@media (min-width $lg_breakpoint)
+  .navigation_toggle_label
+    display none
+  .navigation
+    ol
+      position relative
+      width auto
+      background-color transparent
+      padding-top 3em
+      padding-right 1.5em
+      text-align right
+      height auto
+      z-index 1
+      .supports-no-js &, .white_bg &
+        padding-top 1em
+        font-size 0.9em
+        a
+          padding 0.3em 1em
+    li
+      display inline-block
+      border none
+    a
+      position relative
+      font-size em(20)
+      padding 0.7em 1em

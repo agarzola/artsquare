@@ -1,7 +1,10 @@
 nav#navigation.navigation
+  input(type='checkbox' id='menu_toggle' value='on').navigation_toggle
+  label(for='menu_toggle').navigation_toggle_label Toggle navigation menu
   ol
     li: a(href='/#about') About
     li: a(href='/#tools') Tools
+    li: a(href='/#partners') Our Partners
     li: a(href='/#pricing') Pricing
     li: a(href='/#signup') Sign Up
-    li: a(href='/login').button.pill.outline Login
+    li.login: a(href='/login').button.pill.outline Login

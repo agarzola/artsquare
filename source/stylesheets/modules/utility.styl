@@ -28,3 +28,13 @@ proportional_magic(height)
     right 0
     bottom 0
     overflow hidden
+
+header_element_spacing()
+  margin-top 1.5em
+  transition-property margin-top
+  .supports-no-js &, .white_bg &
+    margin-top 0.5em
+  @media (min-width $lg_breakpoint)
+    margin-top 2.5em
+    .white_bg &
+      margin-top 0.5em
