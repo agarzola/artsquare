@@ -3,7 +3,12 @@ include ./partners_data
 section#partners.partners
   h2 We’re adding new partner platforms every week
   p Sign up to let us know which platforms you want us to add next.
-  ul
-    for partner in partners
-      li: a(href=partner.url target='_blank')
-        img(src=partner.image alt=partner.name)
+  .partners_stage
+    ul(style=('width:' + ((partners.length * 248 / 14) + 2) + 'em;'))
+      for partner in partners
+        li: a(href=partner.url target='_blank')
+          .partner_logo
+            img(src=partner.image alt=(partner.name + ' logo'))
+          .partner_info
+            h3= partner.name
+            p= partner.type
