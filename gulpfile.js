@@ -29,6 +29,7 @@ var styles_src = [
 
 var js_src = [
   'source/javascript/**/*.js',
+  '!source/javascript/**/_*.js',
   '!source/javascript/vendor{,/**}' ]
 
 var js_vendors_src = [
