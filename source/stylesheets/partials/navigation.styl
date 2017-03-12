@@ -18,11 +18,11 @@
     right 0
     z-index 1
     box-sizing border-box
-  &:target ol
+  &:target ol, &[data-expanded] ol
     height em(300, 14) + 1.4em
   .supports-no-js &, .reduced_header &
     top 3em
-    &:target ol
+    &:target ol, &[data-expanded] ol
       height em(300, 14) + 1.4em // 50px * 6 menu items + bottom padding
   li
     display block
@@ -79,7 +79,7 @@
   &:hover, &:focus
     color transparent
     background-color transparent
-  #navigation:target &
+  #navigation:target &, #navigation[data-expanded] &
     display block
 
 @media (min-width $lg_breakpoint)
