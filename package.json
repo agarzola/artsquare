@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "smooth-scroll": "github:cferdinandi/smooth-scroll"
+    "smooth-scroll": "github:agarzola/smooth-scroll"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
