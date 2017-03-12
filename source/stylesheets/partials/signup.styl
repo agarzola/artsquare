@@ -6,23 +6,27 @@
   button
     margin 1em auto
     width 100%
-  @media (min-width (700/16)em + 4)
+  input, button
+    box-sizing border-box
+    height em(60, 22)
+    font-size em(22, 14)
+  @media (min-width $lg_breakpoint)
     form
-      max-width em(700, 18)
+      width em(700)
       padding 0
       margin-left auto
       margin-right auto
     input
       border-radius $radius 0 0 $radius
-      width em(400, 20)
+      width em(400, 22)
       float left
-      height 3em
     button
       border-radius 0 $radius $radius 0
-      width em(270, 20)
+      width em(300, 22)
       margin-top 0
       float right
-      height 3em
+    input, button
+      font-size em(22)
     p
       clear both
 
