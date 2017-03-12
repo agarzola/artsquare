@@ -29,6 +29,10 @@ var jsSrc = [
   'source/javascript/**/*.js',
   '!source/javascript/vendor{,/**}' ]
 
+var js_vendors_src = [
+  'node_modules/smooth-scroll/dist/js/smooth-scroll.min.js'
+]
+
 var imagesSrc = 'source/images/**/*.*'
 
 // Aaaand we start taskin’
@@ -83,7 +87,7 @@ gulp.task('javascript', function () {
 // TO-DO: Implement hinting & collation.
 
 gulp.task('javascript_vendors', function () {
-  gulp.src('source/javascript/vendor/*')
+  gulp.src(js_vendors_src)
   .pipe(plumber())
   .pipe(gulp.dest('build/javascript/vendor'))
 })
