@@ -11,56 +11,64 @@ block content
   include sections/signup
 
 block script
-  script.
-    (function (window, document) {
-      var body = document.body;
-      var className = 'reduced_header';
-      var regex = new RegExp(' ?' + className, 'g');
+  //- All of this JS amounts to < 1KB after uglification;
+  //- it’s not worth loading extenally.
+  script
+    :uglify-js
+      // Toggle header appearance according to scroll position
+      (function (window, document) {
+        var body = document.body;
+        var className = 'reduced_header';
+        var regex = new RegExp(' ?' + className, 'g');
 
-      window.addEventListener('scroll', toggle_masthead_bg);
-      window.addEventListener('resize', toggle_masthead_bg);
+        window.addEventListener('scroll', toggle_masthead_bg);
+        window.addEventListener('resize', toggle_masthead_bg);
 
-      function toggle_masthead_bg (event) {
-        if (body.scrollTop > 36) {
-          body.className += body.className.match(regex) ? '' : ' ' + className;
-        } else {
-          body.className = body.className.replace(regex, '');
-        }
-      }
-    })(window, document);
-
-  script.
-    (function () {
-      var nav_open = document.getElementById('navigation_open');
-      var nav_close = document.getElementById('navigation_close');
-      var nav = document.getElementById('navigation');
-
-      nav_open.addEventListener('click', open_nav);
-      nav.addEventListener('click', close_nav);
-
-      function open_nav (event) {
-        event.preventDefault();
-        nav.setAttribute('data-expanded', true);
-      }
-
-      function close_nav (event) {
-        if (event.target.id === nav_close.id) {
-          event.preventDefault();
-        }
-        nav.removeAttribute('data-expanded');
-      }
-    })(window, document);
-
-  script.
-    (function (window, document) {
-      smoothScroll.init({
-        selector: '[data-scroll]',
-        offset: function () {
-          if (Modernizr.mq('(min-width: 960px)')) {
-            return 55;
+        function toggle_masthead_bg (event) {
+          if (body.scrollTop > 36) {
+            body.className += body.className.match(regex) ? '' : ' ' + className;
           } else {
-            return 43;
+            body.className = body.className.replace(regex, '');
           }
         }
-      });
-    })(window, document);
+      })(window, document);
+
+  script
+    :uglify-js
+      // Handle nav toggle w/o cluttering window history
+      (function () {
+        var nav_open = document.getElementById('navigation_open');
+        var nav_close = document.getElementById('navigation_close');
+        var nav = document.getElementById('navigation');
+
+        nav_open.addEventListener('click', open_nav);
+        nav.addEventListener('click', close_nav);
+
+        function open_nav (event) {
+          event.preventDefault();
+          nav.setAttribute('data-expanded', true);
+        }
+
+        function close_nav (event) {
+          if (event.target.id === nav_close.id) {
+            event.preventDefault();
+          }
+          nav.removeAttribute('data-expanded');
+        }
+      })(window, document);
+
+  script
+    :uglify-js
+      // Initialize smooth scrolling to page anchors
+      (function (window, document) {
+        smoothScroll.init({
+          selector: '[data-scroll]',
+          offset: function () {
+            if (Modernizr.mq('(min-width: 960px)')) {
+              return 55;
+            } else {
+              return 43;
+            }
+          }
+        });
+      })(window, document);
