@@ -10,6 +10,8 @@ var concat = require('gulp-concat')
 var plumber = require('gulp-plumber')
 var browser_sync = require('browser-sync')
 var gulp_if = require('gulp-if')
+var imagemin = require('gulp-imagemin')
+var imagemin_jpegoptim = require('imagemin-jpegoptim')
 var argv = require('yargs').argv
 
 // Useful globs in handy variables:
@@ -97,6 +99,13 @@ gulp.task('javascript_vendors', function () {
 gulp.task('images', function () {
   gulp.src(images_src)
   .pipe(plumber())
+  .pipe(imagemin([
+    imagemin_jpegoptim({
+      max: 92
+    }),
+    imagemin.optipng(),
+    imagemin.svgo()
+  ]))
   .pipe(gulp.dest('build/images'))
 })
 
