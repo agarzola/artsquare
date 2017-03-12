@@ -40,7 +40,8 @@ var images_src = 'source/images/**/*.*'
 gulp.task('watch', ['build', 'browser-sync'], function () {
   gulp.watch(markup_src[0], ['markup'])
   gulp.watch(styles_src[0], ['styles'])
-  gulp.watch(js_src[0], ['javascript', 'javascript_vendors'])
+  gulp.watch(js_src[0], ['javascript'])
+  gulp.watch(js_vendors_src, ['javascript_vendors'])
   gulp.watch(images_src, ['images'])
 })
 
