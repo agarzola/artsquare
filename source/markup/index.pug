@@ -28,3 +28,18 @@ block script
         }
       }
     })(window, document);
+  script.
+    (function (window, document) {
+      smoothScroll.init({
+        selector: '[data-scroll]',
+        offset: function () {
+          if (Modernizr.mq('(min-width: 960px)')) {
+            console.log('large!');
+            return 55;
+          } else {
+            console.log('small!');
+            return 43;
+          }
+        }
+      });
+    })(window, document);
