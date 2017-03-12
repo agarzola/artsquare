@@ -8,24 +8,24 @@ var prefix = require('gulp-autoprefixer')
 var uglify = require('gulp-uglify')
 var concat = require('gulp-concat')
 var plumber = require('gulp-plumber')
-var browserSync = require('browser-sync')
-var gulpIf = require('gulp-if')
+var browser_sync = require('browser-sync')
+var gulp_if = require('gulp-if')
 var argv = require('yargs').argv
 
 // Useful globs in handy variables:
-var markupSrc = [
+var markup_src = [
   'source/markup/**/*.pug',
   '!source/markup/_layout.pug',
   '!source/markup/partials{,/**}',
   '!source/markup/sections{,/**}',
   '!source/markup/features{,/**}' ]
 
-var stylesSrc = [
+var styles_src = [
   'source/stylesheets/**/*.styl',
   '!source/stylesheets/partials{,/**}',
   '!source/stylesheets/modules{,/**}' ]
 
-var jsSrc = [
+var js_src = [
   'source/javascript/**/*.js',
   '!source/javascript/vendor{,/**}' ]
 
@@ -33,15 +33,15 @@ var js_vendors_src = [
   'node_modules/smooth-scroll/dist/js/smooth-scroll.min.js'
 ]
 
-var imagesSrc = 'source/images/**/*.*'
+var images_src = 'source/images/**/*.*'
 
 // Aaaand we start taskin’
 // By default, we build, serve, and watch for changes:
 gulp.task('watch', ['build', 'browser-sync'], function () {
-  gulp.watch(markupSrc[0], ['markup'])
-  gulp.watch(stylesSrc[0], ['styles'])
-  gulp.watch(jsSrc[0], ['javascript', 'javascript_vendors'])
-  gulp.watch(imagesSrc, ['images'])
+  gulp.watch(markup_src[0], ['markup'])
+  gulp.watch(styles_src[0], ['styles'])
+  gulp.watch(js_src[0], ['javascript', 'javascript_vendors'])
+  gulp.watch(images_src, ['images'])
 })
 
 // Build the site:
@@ -55,7 +55,7 @@ gulp.task('build',
 
 // Generate markup:
 gulp.task('markup', function () {
-  gulp.src(markupSrc)
+  gulp.src(markup_src)
   .pipe(plumber())
   .pipe(pug({
     pretty: (argv.production ? false : true)
@@ -65,7 +65,7 @@ gulp.task('markup', function () {
 
 // Generate styles, add prefixes:
 gulp.task('styles', function () {
-  gulp.src(stylesSrc)
+  gulp.src(styles_src)
   .pipe(plumber())
   .pipe(stylus({
     use: nib(),
@@ -78,7 +78,7 @@ gulp.task('styles', function () {
 
 // Copy javascript:
 gulp.task('javascript', function () {
-  gulp.src(jsSrc)
+  gulp.src(js_src)
   .pipe(plumber())
   .pipe(concat('all.js'))
   .pipe(uglify())
@@ -94,14 +94,14 @@ gulp.task('javascript_vendors', function () {
 
 // Copy images to build dir:
 gulp.task('images', function () {
-  gulp.src(imagesSrc)
+  gulp.src(images_src)
   .pipe(plumber())
   .pipe(gulp.dest('build/images'))
 })
 
 // Init browser-sync & watch generated files:
 gulp.task('browser-sync', function () {
-  browserSync.init(null, {
+  browser_sync.init(null, {
     server: {
       baseDir: './build'
     },
