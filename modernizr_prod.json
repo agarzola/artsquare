@@ -1,21 +1,10 @@
 {
   "classPrefix": "supports-",
   "options": [
-    "addTest",
-    "atRule",
-    "domPrefixes",
-    "hasEvent",
     "html5shiv",
     "html5printshiv",
-    "load",
     "mq",
-    "prefixed",
-    "prefixes",
-    "prefixedCSS",
-    "setClasses",
-    "testAllProps",
-    "testProp",
-    "testStyles"
+    "setClasses"
   ],
   "feature-detects": [
     "css/vhunit",
