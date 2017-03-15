@@ -14,6 +14,8 @@
   font-size em(22, 14)
   @media (min-width $lg_breakpoint)
     font-size em(22)
+  &[disabled]
+    color lighten($blue, 50%)
   &:hover, &:focus
     outline none
     background-color $purple

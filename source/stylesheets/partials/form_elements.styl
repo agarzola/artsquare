@@ -12,6 +12,11 @@ input
     display block
     overflow visible
     width 100%
+    transition-property color
+    transition-duration 1s
+    &[disabled]
+      color #bbb
+      transition-duration 0s
     &::before
       content ' '
       display block
