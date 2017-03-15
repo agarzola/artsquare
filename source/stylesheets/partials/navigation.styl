@@ -19,11 +19,17 @@
     z-index 1
     box-sizing border-box
   &:target ol, &[data-expanded] ol
-    height em(300, 14) + 1.4em
+    // this is w/o the login button:
+    height em(255, 14)
+    // when login button is uncommented, use this line:
+    // height em(300, 14) + 1.4em // 50px * 6 menu items + bottom padding
   .supports-no-js &, .reduced_header &
     top 3em
     &:target ol, &[data-expanded] ol
-      height em(300, 14) + 1.4em // 50px * 6 menu items + bottom padding
+      // this is w/o the login button:
+      height em(255, 14)
+      // when login button is uncommented, use this line:
+      // height em(300, 14) + 1.4em // 50px * 6 menu items + bottom padding
   li
     display block
     height em(50, 14)
