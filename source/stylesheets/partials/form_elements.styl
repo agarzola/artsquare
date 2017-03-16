@@ -1,32 +1,32 @@
-input
-  &[type=text], &[type=email],
-  &[type=tel], &[type=number]
-    font-size em(20, 14)
-    appearance none
-    padding 0.6em 1.2em
-    border em(2) solid $blue
-    border-radius $radius
-    background-color #fff
-    box-sizing border-box
-    position relative
-    display block
-    overflow visible
-    width 100%
-    transition-property color
-    transition-duration 1s
-    &[disabled]
-      color #bbb
-      transition-duration 0s
-    &::before
-      content ' '
-      display block
-      position absolute
-      top em(-2)
-      left em(-2)
-      right em(-2)
-      bottom em(-2)
-      background $basic_gradient
-    &:focus
-      outline none
-    @media (min-width $md_breakpoint)
-      font-size em(20, 18)
+// input
+//   &[type=text], &[type=email],
+//   &[type=tel], &[type=number]
+//     font-size em(20, 14)
+//     appearance none
+//     padding 0.6em 1.2em
+//     border em(2) solid $blue
+//     border-radius $radius
+//     background-color #fff
+//     box-sizing border-box
+//     position relative
+//     display block
+//     overflow visible
+//     width 100%
+//     transition-property color
+//     transition-duration 1s
+//     &[disabled]
+//       color #bbb
+//       transition-duration 0s
+//     &::before
+//       content ' '
+//       display block
+//       position absolute
+//       top em(-2)
+//       left em(-2)
+//       right em(-2)
+//       bottom em(-2)
+//       background $basic_gradient
+//     &:focus
+//       outline none
+//     @media (min-width $md_breakpoint)
+//       font-size em(20, 18)

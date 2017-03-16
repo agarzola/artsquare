@@ -1,49 +1,63 @@
 #signup
   background-color #fff
   padding-bottom 10em !important
-  form
-    margin 2em 0
+
+  // The following are Maître-specific overrides
   button
-    margin 1em auto
-    width 100%
-  input, button
-    box-sizing border-box
-    height em(60, 22)
-    font-size em(22, 14)
-  @media (min-width $lg_breakpoint)
-    form
-      width em(700)
-      padding 0
-      margin-left auto
-      margin-right auto
-    input
-      border-radius $radius 0 0 $radius
-      width em(400, 22)
-      float left
-    button
-      border-radius 0 $radius $radius 0
-      width em(300, 22)
-      margin-top 0
-      float right
-    input, button
-      font-size em(22)
-    p
-      clear both
+    background-color $purple !important
+    &:hover, &:focus
+      background-color darken($purple, 20%) !important
+  input:focus
+    border-color $blue !important
+    & ~ label
+      color $blue !important
+  #maitre-widget-container
+    max-width initial
+  // END Maître-specific overrides
+
+  // form
+  //   margin 2em 0
+  // button
+  //   margin 1em auto
+  //   width 100%
+  // input, button
+  //   box-sizing border-box
+  //   height em(60, 22)
+  //   font-size em(22, 14)
+  // @media (min-width $lg_breakpoint)
+  //   form
+  //     width em(700)
+  //     padding 0
+  //     margin-left auto
+  //     margin-right auto
+  //   input
+  //     border-radius $radius 0 0 $radius
+  //     width em(400, 22)
+  //     float left
+  //   button
+  //     border-radius 0 $radius $radius 0
+  //     width em(300, 22)
+  //     margin-top 0
+  //     float right
+  //   input, button
+  //     font-size em(22)
+  //   p
+  //     clear both
 
 
-.supports-placeholder label
-  display none
+// .supports-placeholder label
+//   display none
 
-.signup_form--success_message
-  color #fff
-  background-color $blue
-  border-radius $radius
-  padding 1em
-  margin 1em 0
+// .signup_form--success_message
+//   color #fff
+//   background-color $blue
+//   border-radius $radius
+//   padding 1em
+//   margin 1em 0
 
-.signup_form--error_message
-  color #fff
-  background-color $red
-  border-radius $radius
-  padding 1em
-  margin 1em 0
+// .signup_form--error_message
+//   color #fff
+//   background-color $red
+//   border-radius $radius
+//   padding 1em
+//   margin 1em 0
