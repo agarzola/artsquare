@@ -1,7 +1,16 @@
 section#signup.signup
   .container
     script(type='text/javascript').
-      window.Maitre = { uuid: 'MFade9aed41b' };
+      window.Maitre = {
+        uuid: 'MFade9aed41b',
+        callbacks: {
+          afterSuccess: function(data, form) {
+            if (data.response == 'subscriber_created') {
+              fbq('track', 'CompleteRegistration');
+            }
+          }
+        }
+      }
     script(data-maitre src='https://maitreapp.co/leadmagnet/widget.js' async)
   //-
     h2 Get invited to our beta!
