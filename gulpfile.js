@@ -1,7 +1,9 @@
 // Gulp plugins:
 var gulp = require('gulp')
 var pug = require('gulp-pug')
+var pug_engine = require('pug')
 var stylus = require('gulp-stylus')
+var stylus_engine = require('stylus')
 var nib = require('nib')
 var changed = require('gulp-changed')
 var prefix = require('gulp-autoprefixer')
@@ -13,6 +15,16 @@ var gulp_if = require('gulp-if')
 var imagemin = require('gulp-imagemin')
 var imagemin_jpegoptim = require('imagemin-jpegoptim')
 var argv = require('yargs').argv
+
+// Enable nib in stylus filter for pug:
+pug_engine.filters.stylus = function (str, options) {
+  var result
+  stylus_engine(str, options).use(nib()).render(function (err, css) {
+    if (err) { throw err }
+    result = css
+  })
+  return result
+}
 
 // Useful globs in handy variables:
 var markup_src = [
@@ -62,7 +74,8 @@ gulp.task('markup', function () {
   gulp.src(markup_src)
   .pipe(plumber())
   .pipe(pug({
-    pretty: (argv.production ? false : true)
+    pretty: (argv.production ? false : true),
+    pug: pug_engine // use pug instance w/nib injected into stylus
   }))
   .pipe(gulp.dest('build/'))
 })
